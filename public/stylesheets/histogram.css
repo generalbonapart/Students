@@ -1,0 +1,30 @@
+.lower
+{
+    background-color: rgb(234, 237, 242);
+    width: 300px;
+    height: 500px;
+}
+
+.table
+{
+    position: relative;
+    left: -40px;
+    top: 0px;
+}
+.red
+{
+    color: rgb(194, 24, 24);
+    font-weight: bold;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    
+}
+
+
+form  { display: table;  border-spacing: 60px 20px;   }
+p     { display: table-row;  }
+label { display: table-cell; white-space: pre; }
+input { display: table-cell;  width: 80px; height: 20px; border-radius: 3px; border-color: rgb(172, 172, 167); border-width: 1px; font-size: 13px; font-family: Georgia; text-align: center;}
+
+

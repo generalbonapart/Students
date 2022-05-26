@@ -1,45 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 1</title>
-</head>
-<body>
-    <nav>
-        <ul>
-            <li>Nav1</li>
-            <li>Nav2</li>
-        </ul>
-    </nav>
-    <main>
-        <p>
-            Hello world!
-            <a href="https://canvas.sfu.ca" id = "sfu_link"> Canvas link </a>
-            <table>
-                <tr>
-                    <th>Grade</th><th>Mark</th>
-                </tr>
-                
-                <tr>
-                    <td>A+   </td><td> 95% </td>
-                </tr>
-                <tr>
-                    <td>B   </td><td>  75%</td>
-                </tr>
-            </table>
-            <form action="index.html" method="post">
-                <input type="text" name="fname" value="" placeholder="NAME">
-                <input type="password", name="", value="">
-                <input type="number" name="" value="" required>
-                <input type="submit" name="submit" value="SUBMIT!!">
-            </form>
-        </p>
-        
-
-
-    </main>
-    <footer>Copyright 2022</footer>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assignment 1</title>
+        <link rel="stylesheet" href="./stylesheets/histogram.css">
+      
+    </head>
+    <body>
+    
+        <main>
+            <div class="lower" >
+                <p class = "red"> Lower bounds </p> <br>
+               
+                <form action="index.html" method="post" class ="table">
+                    <p><label for="Max"> Max        </label> <input type="text" inputmode="numeric" id="Max" name="Max" value="          100.00"></p> 
+                    <p><label for="A+"> A+          </label> <input type="text" inputmode="numeric" id="A+" name="A+" value="           95.00"> </p>
+                    <p><label for="A"> A           </label> <input type="text" inputmode="numeric" id="A" name="A" value="            90.00"> </p>
+                    <p><label for="A-"> A+          </label> <input type="text" inputmode="numeric" id="A-" name="A-" value="           85.00"> </p>
+                    <p><label for="B+"> A+          </label> <input type="text" inputmode="numeric" id="B+" name="B+" value="           80.00"> </p> 
+                    <p><label for="B"> A           </label> <input type="text" inputmode="numeric" id="B" name="B" value="            75.00"> </p>    
+                </form>
+            </div>
+        </main>
+    </body>
 </html>
+
