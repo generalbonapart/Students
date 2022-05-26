@@ -14,13 +14,43 @@
             <div class="lower" >
                 <p class = "red"> Lower bound </p> <br>
                
-                <form action="index.html" method="post" class ="table">
+                <form action="index.html" method="post" class ="form">
                     <p><label for="Max"> Max        </label> <input type="text" inputmode="numeric" id="Max" name="Max" value="          100.00"></p> 
                     <p><label for="A+"> A+          </label> <input type="text" inputmode="numeric" id="A+" name="A+" value="           95.00"> </p>
                     <p><label for="A"> A           </label> <input type="text" inputmode="numeric" id="A" name="A" value="            90.00"> </p>
-                    <p><label for="A-"> A+          </label> <input type="text" inputmode="numeric" id="A-" name="A-" value="           85.00"> </p>
+                    <p><label for="A-"> A-          </label> <input type="text" inputmode="numeric" id="A-" name="A-" value="           85.00"> </p>
                     <p><label for="B+"> A+          </label> <input type="text" inputmode="numeric" id="B+" name="B+" value="           80.00"> </p> 
                     <p><label for="B"> A           </label> <input type="text" inputmode="numeric" id="B" name="B" value="            75.00"> </p>    
+                </form>
+            </div>
+
+            <div class = "histogram">
+                <table class="table">
+                    <tr> 
+                        <td> A+ </td> <td> O </td>
+                    </tr>
+                    <tr>
+                        <td> A </td> <td> OOO</td>
+                    </tr>
+                    <tr>
+                        <td> A- </td> <td> OOO </td>
+                    </tr>
+                    <tr>
+                        <td> B+ </td> <td> OO </td>
+                    </tr>
+                    <tr>
+                        <td> B </td> <td> O </td>
+                    </tr>
+                    <tr>
+                        <td> B- </td> <td> OOOO </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="submit_box">
+                <form action="index.html" method="post" class ="new_grade">
+                    <p> <label for="grade"> New Grade:</label> <input type="text" inputmode="numeric"  id="grade" value=""> </p>
+                    <p> <input type="submit"></p>
                 </form>
             </div>
         </main>

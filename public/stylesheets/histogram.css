@@ -1,3 +1,9 @@
+main{
+    position: absolute;
+    top:40px;
+    left:40px;
+}
+
 .lower
 {
     background-color: rgb(234, 237, 242);
@@ -5,12 +11,45 @@
     height: 500px;
 }
 
-.table
+.histogram
+{   
+    background-color: rgb(234, 237, 242);
+    position:absolute;
+    left: 310px;
+    top:  0px;
+    width: 300px;
+    height: 340px;
+}
+
+.submit_box
 {
+    background-color: rgb(234, 237, 242);
+    position:absolute;
+    left: 310px;
+    top:  350px;
+    width: 300px;
+    height: 150px;
+}
+
+.form
+{   
+    font-size: 12px;
     position: relative;
     left: -40px;
     top: 0px;
 }
+
+.table
+{   
+    font-family: Georgia;
+    font-size: 12px;
+    border-spacing: 100px 10px;
+    position: absolute;
+    left: -80px;
+    top: 40px;
+}
+
+
 .red
 {
     color: rgb(194, 24, 24);
@@ -22,9 +61,11 @@
 }
 
 
+
+
 form  { display: table;  border-spacing: 60px 20px;   }
 p     { display: table-row;  }
-label { display: table-cell; white-space: pre; }
+label { display: table-cell; }
 input { display: table-cell;  width: 80px; height: 20px; border-radius: 3px; border-color: rgb(172, 172, 167); border-width: 1px; font-size: 13px; font-family: Georgia; text-align: center;}
 
 
