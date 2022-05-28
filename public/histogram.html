@@ -6,13 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Assignment 1</title>
         <link rel="stylesheet" href="./stylesheets/histogram.css">
+        
       
     </head>
     <body>
     
         <main>
             <div class="lower" >
-                <p class = "red"> Lower bound </p> <br>
+                <p class = "red"> Lower bounds </p> <br>
                
                 <form action="index.html" method="post" class ="form">
                     <p><label for="Max"> Max        </label> <input type="text" inputmode="numeric" id="Max" name="Max" value="          100.00"></p> 
@@ -27,22 +28,22 @@
             <div class = "histogram">
                 <table class="table">
                     <tr> 
-                        <td> A+ </td> <td> O </td>
+                        <td> A+ </td> <td class="cell"> O </td>
                     </tr>
                     <tr>
-                        <td> A </td> <td> OOO</td>
+                        <td> A </td> <td class="cell"> OOO</td>
                     </tr>
                     <tr>
-                        <td> A- </td> <td> OOO </td>
+                        <td> A- </td> <td class="cell"> OOO </td>
                     </tr>
                     <tr>
-                        <td> B+ </td> <td> OO </td>
+                        <td> B+ </td> <td class="cell"> OO </td>
                     </tr>
                     <tr>
-                        <td> B </td> <td> O </td>
+                        <td> B </td> <td class="cell"> O </td>
                     </tr>
                     <tr>
-                        <td> B- </td> <td> OOOO </td>
+                        <td> B- </td> <td class="cell"> OOOO </td>
                     </tr>
                 </table>
             </div>
@@ -50,9 +51,12 @@
             <div class="submit_box">
                 <form action="index.html" method="post" class ="new_grade">
                     <p> <label for="grade"> New Grade:</label> <input type="text" inputmode="numeric"  id="grade" value=""> </p>
-                    <p> <input type="submit"></p>
+                    <button id="button" type="button" name="add">  ADD </button>
                 </form>
             </div>
         </main>
+        <script type="text/javascript" src="./calculate.js">
+
+        </script>
     </body>
 </html>
