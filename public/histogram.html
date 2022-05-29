@@ -16,16 +16,24 @@
                 <p class = "red"> Lower bounds </p> <br>
                
                 <form action="index.html" method="post" class ="form">
-                    <p><label for="Max"> Max        </label> <input type="text" inputmode="numeric" id="Max" name="Max" value="          100.00"></p> 
-                    <p><label for="A+"> A+          </label> <input type="text" inputmode="numeric" id="A+" name="A+" value="           95.00"> </p>
-                    <p><label for="A"> A           </label> <input type="text" inputmode="numeric" id="A" name="A" value="            90.00"> </p>
-                    <p><label for="A-"> A-          </label> <input type="text" inputmode="numeric" id="A-" name="A-" value="           85.00"> </p>
-                    <p><label for="B+"> A+          </label> <input type="text" inputmode="numeric" id="B+" name="B+" value="           80.00"> </p> 
-                    <p><label for="B"> A           </label> <input type="text" inputmode="numeric" id="B" name="B" value="            75.00"> </p>    
+                    <p><label for="Max"> Max </label> <input type="text" inputmode="numeric" id="Max" name="bound" value="100.00"></p> 
+                    <p><label for="A+"> A+ </label> <input type="text" inputmode="numeric" id="A+" name="bound" value="95.00"> </p>
+                    <p><label for="A"> A </label> <input type="text" inputmode="numeric" id="A" name="bound" value="90.00"> </p>
+                    <p><label for="A-"> A- </label> <input type="text" inputmode="numeric" id="A-" name="bound" value="85.00"> </p>
+                    <p><label for="B+"> B+ </label> <input type="text" inputmode="numeric" id="B+" name="bound" value="80.00"> </p> 
+                    <p><label for="B"> B </label> <input type="text" inputmode="numeric" id="B" name="bound" value="75.00"> </p>    
+                    <p><label for="B-"> B- </label> <input type="text" inputmode="numeric" id="B-" name="bound" value="70.00"> </p>
+                    <p><label for="C+"> C+ </label> <input type="text" inputmode="numeric" id="C+" name="bound" value="65.00"> </p>
+                    <p><label for="C"> C </label> <input type="text" inputmode="numeric" id="C" name="bound" value="60.00"> </p>
+                    <p><label for="C-"> C- </label> <input type="text" inputmode="numeric" id="C-" name="bound" value="55.00"> </p>
+                    <p><label for="D"> D </label> <input type="text" inputmode="numeric" id="D" name="bound" value="50.00"> </p>
+                    <p><label for="F"> F </label> <input type="text" inputmode="numeric" id="F" name="bound" value="0.00"> </p>
+
                 </form>
             </div>
 
             <div class = "histogram">
+                <p class = "red"> Histogram </p> <br>
                 <table class="table">
                     <tr> 
                         <td> A+ </td> <td class="cell"> O </td>
@@ -45,12 +53,27 @@
                     <tr>
                         <td> B- </td> <td class="cell"> OOOO </td>
                     </tr>
+                    <tr> 
+                        <td> C+ </td> <td class="cell"> O </td>
+                    </tr>
+                    <tr>
+                        <td> C </td> <td class="cell"> OO </td>
+                    </tr>
+                    <tr>
+                        <td> C- </td> <td class="cell"> OO </td>
+                    </tr>
+                    <tr>
+                        <td> D </td> <td class="cell"> OOO </td>
+                    </tr>
+                    <tr>
+                        <td> F </td> <td class="cell"> OO </td>
+                    </tr>
                 </table>
             </div>
 
             <div class="submit_box">
                 <form action="index.html" method="post" class ="new_grade">
-                    <p> <label for="grade"> New Grade:</label> <input type="text" inputmode="numeric"  id="grade" value=""> </p>
+                    <p> <label for="grade"> New Grade:</label> <input type="text" inputmode="numeric" class="numOnly" onkeypress="return onlyNumberKey(event)"  id="grade" value=""> </p>
                     <button id="button" type="button" name="add">  ADD </button>
                 </form>
             </div>

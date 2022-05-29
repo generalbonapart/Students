@@ -1,4 +1,5 @@
 main{
+    font-family: Georgia;
     position: absolute;
     top:40px;
     left:40px;
@@ -9,7 +10,7 @@ main{
     border-radius: 3px;
     background-color: rgb(234, 237, 242);
     width: 300px;
-    height: 500px;
+    height: 530px;
 }
 
 .histogram
@@ -33,15 +34,16 @@ main{
     left: 310px;
     top:  350px;
     width: 300px;
-    height: 150px;
+    height: 180px;
 }
 
 .form
 {   
+    border-spacing: 70px 15px;
     font-size: 12px;
     position: relative;
-    left: -40px;
-    top: 0px;
+    left: -30px;
+    top: 10px;
 }
 
 .table
@@ -60,16 +62,30 @@ main{
 {
     color: rgb(194, 24, 24);
     font-weight: bold;
+    font-size: 14px;
     position: relative;
     left: 10px;
     top: 10px;
     
 }
 
+.new_grade{
+    position: relative;
+    right: 50px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+#grade{
+    width: 100px;
+    position: relative;
+    right: 50px;
+}
+
 
 form  { display: table;  border-spacing: 60px 20px;   }
 p     { display: table-row;  }
 label { display: table-cell; }
-input { display: table-cell;  width: 80px; height: 20px; border-radius: 3px; border-color: rgb(172, 172, 167); border-width: 1px; font-size: 13px; font-family: Georgia; text-align: center;}
+input { display: table-cell;  width: 80px; height: 20px; border-radius: 3px; border-color: rgb(172, 172, 167); border-width: 1px; font-size: 12px; font-family: Georgia; text-align: center;}
 
 
