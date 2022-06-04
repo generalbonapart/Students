@@ -2,6 +2,7 @@ var grades = [65.95, 56.98, 78.62, 96.1, 90.3, 72.24, 92.34, 60.00, 81.43, 86.22
     49.93, 52.34, 53.11, 50.10, 88.88, 55.32, 55.69, 61.68, 70.44, 70.54, 90.0, 71.11, 80.01];
 
 var hist = [1,3,3,2,1,4,1,2,2,3,2]
+
 var bound = 100;
 var bounds = [];
 while (bound>=50)
@@ -19,12 +20,6 @@ function onlyNumberKey(evt) {
         return false;
     }
     return true;
-}
-
-
-function validGrade(grade){
-
-
 }
 
 function getLetter(i)
@@ -46,24 +41,67 @@ function getLetter(i)
 
 
 function updateBounds(i){
-    console.log(i)
-    new_value = parseFloat(document.getElementsByName("bound")[i].value)
-    
-    if(new_value != bounds[i])
-    {
-        if(new_value<bounds[i+1] || new_value>bounds[i-1]){
-            alert("The bound should not overlap the neighboring bounds!");
-            document.getElementsByName("bound")[i].value = bounds[i].toFixed(2)
-            return;
-        }
-        else{
-            console.log(new_value)
-            document.getElementsByName("bound")[i].value = new_value.toFixed(2)
-            bounds[i] = new_value
-            updateHist2(i)
-        }
-
+    new_value = document.getElementsByName("bound")[i].value
+    if(isNaN(new_value) || new_value == ""){
+        alert("Invalid input");
+        document.getElementsByName("bound")[i].value = bounds[i].toFixed(2)
+        return;
     }
+    new_value = parseFloat(new_value)
+    if(new_value == bounds[i]){
+        document.getElementsByName("bound")[i].value = bounds[i].toFixed(2)
+        return;
+    } 
+    if((new_value<bounds[i+1] || new_value>bounds[i-1]) && i>0 && i<11){
+        alert("The bound should not overlap the neighboring bounds!");
+        document.getElementsByName("bound")[i].value = bounds[i].toFixed(2)
+        return;
+    }
+    if(new_value<bounds[i+1] && i==0){
+        alert("The bound should not overlap the neighboring bounds!");
+        document.getElementsByName("bound")[i].value = bounds[i].toFixed(2)
+        return;
+    }
+    if(new_value>bounds[i-1] && i==11){
+        alert("The bound should not overlap the neighboring bounds!");
+        document.getElementsByName("bound")[i].value = bounds[i].toFixed(2)
+        return;
+    }
+    
+    console.log(new_value)
+    document.getElementsByName("bound")[i].value = new_value.toFixed(2)
+    bounds[i] = new_value
+    if(i==0){
+        updateHistTop()
+    }
+    else if (i==11) {
+        updateHistBottom()
+    } 
+    else {
+        updateHist2(i)
+    }
+    
+    
+}
+
+function updateHistBottom()
+{
+    var count = 0;
+    for (x in grades){
+        if(grades[x]>bounds[11] && grades[x]<bounds[10]){count++;}
+    }
+    hist[10] = count;
+    updateHistGrade(10);
+}
+
+function updateHistTop()
+{   
+    var count = 0;
+    for (x in grades){
+        if(grades[x]>bounds[1] && grades[x]<bounds[0]){count++;}
+    }
+    hist[0] = count;
+    updateHistGrade(0);
 }
 
 function updateHist2(index){
@@ -72,12 +110,11 @@ function updateHist2(index){
     bound_higher = bounds[index-1];
     bound_middle = bounds[index];
     bound_lower = bounds[index+1];
-    console.log(bound_higher,bound_middle, bound_lower)
+
     for (x in grades){
         if(grades[x]<bound_higher && grades[x]>=bound_middle){higher++;}
         if(grades[x]<bound_middle && grades[x]>=bound_lower){lower++;}
     }
-    console.log(higher, lower)
     hist[index-1] = higher;
     hist[index] = lower;
     updateHistGrade(index);
@@ -93,7 +130,15 @@ function updateHistGrade(index)
     for (let i=0; i<hist[index]; i++){
         text = text + 'O';
     }
-    
+    if(hist[index]>18){
+        var incr_by = hist[index] - 18;
+        var hist_box = document.getElementById("1");
+        var submit_box = document.getElementById("2");
+        new_width = 300 + incr_by*10;
+        hist_box.style.width = new_width.toString() + "px";
+        submit_box.style.width = new_width.toString() + "px";
+    }
+
     document.getElementsByClassName("cell")[index].innerHTML = text;
 }
 
@@ -103,32 +148,28 @@ function asc(a,b){
 grades.sort(asc)
 
 
-
-function runcommand(evt){
+function addGrade(evt){
     var temp = document.getElementById("grade").value;
     document.getElementById("grade").value = "";
     console.log(temp);
-    if(temp<=100 && temp>=0){
+    if(temp<=bounds[0] && temp>=bounds[11]){
         grades.push(temp);
         var index = getLetter(temp);
         hist[index] += 1
         updateHistGrade(index)
     }
     else{
-        alert("Add a grade between 0 and 100");
+        alert("Add a grade between " + bounds[11] + " and " + bounds[0] );
     }
     
 
     
 }
 
-document.getElementById("button").onclick = runcommand;
+document.getElementById("button").onclick = addGrade;
 
-for (let i=1; i<11; i++)
+for (let i=0; i<12; i++)
 {
     document.getElementsByName("bound")[i].addEventListener('blur', (event)=>updateBounds(i))
 }
 
-// document.getElementById("button").addEventListener('click', (evt)=>{console.log("world")})
-
-// window.addEventListener('keypress', (evt)=>{console.log(evt.key)});

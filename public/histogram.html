@@ -32,7 +32,7 @@
                 </form>
             </div>
 
-            <div class = "histogram">
+            <div class = "histogram" id="1">
                 <p class = "red"> Histogram </p> <br>
                 <table class="table">
                     <tr> 
@@ -71,9 +71,9 @@
                 </table>
             </div>
 
-            <div class="submit_box">
+            <div class="submit_box" id="2">
                 <form action="index.html" method="post" class ="new_grade">
-                    <p> <label for="grade"> New Grade:</label> <input type="text" inputmode="numeric" class="numOnly" onkeypress="return onlyNumberKey(event)"  id="grade" value=""> </p>
+                    <p> <label for="grade"> New Grade:</label> <input type="text" inputmode="numeric" class="numOnly"  id="grade" value=""> </p>
                     <button id="button" type="button" name="add">  ADD </button>
                 </form>
             </div>
@@ -83,3 +83,5 @@
         </script>
     </body>
 </html>
+
+<!-- onkeypress="return onlyNumberKey(event)" -->
