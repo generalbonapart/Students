@@ -3,10 +3,13 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
+
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
 const { Pool } = require('pg');
 var pool;
 pool = new Pool({
-  connectionString: process.env.DATABASE_URL
+  connectionString: process.env.HEROKU_POSTGRESQL_BRONZE_URL
 })
 
 var app = express()
@@ -32,5 +35,3 @@ app.get('/database', (req, res)=> {
 
 
 app.get('/cool', (req, res) => res.send(cool()))
-
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
