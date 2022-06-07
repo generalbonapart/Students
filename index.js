@@ -9,7 +9,7 @@ app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 const { Pool } = require('pg');
 var pool;
 pool = new Pool({
-  connectionString: process.env.HEROKU_POSTGRESQL_BRONZE_URL
+  connectionString: process.env.DATABASE_URL
 })
 
 var app = express()
