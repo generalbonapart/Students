@@ -2,14 +2,15 @@ const cool = require('cool-ascii-faces')
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
-
+console.log(process.env.DATABASE_URL_1)
 
 
 
 const { Pool } = require('pg');
 var pool;
 pool = new Pool({
-  connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL_1
+  
 })
 
 var app = express()
@@ -23,16 +24,15 @@ app.get('/', (req, res) => {res.render('pages/index')})
 
 
 app.get('/database', (req, res)=> {
-  var getUsersQuery = 'SELECT * FROM us2er';
+  var getUsersQuery = 'SELECT * FROM student';
   pool.query(getUsersQuery, (error, result)=>{
     if(error)
       res.end(error);
     var results = {'rows':result.rows}
+
     res.render('pages/db', results)
   })
-  
 })
-
 
 app.get('/cool', (req, res) => res.send(cool()))
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
