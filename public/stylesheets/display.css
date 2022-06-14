@@ -1,0 +1,36 @@
+.student{
+    border-style: solid;
+    border-width: 1px;
+    background-color: ivory;
+    border-radius: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+    float:left;
+    cursor: pointer;
+    position: relative;
+    display:grid;
+}
+
+.box{
+    height: 250px;
+    width: max-content;
+    border-top: 3px;
+    position: relative;
+    left:20px;
+}
+
+.name{
+    font-weight: bold;
+    font-size: 14px;
+    place-self: center;
+    top: 15px;
+    left: 30px;
+}
+
+.gpa{
+    font-weight: bold;
+    font-size: 14px;
+    place-self: center;
+    top: 15px;
+    left: 30px;
+}

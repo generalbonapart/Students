@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include ("../partials/header.ejs") %>
+  <link rel="stylesheet" href="./stylesheets/display.css">
+</head>
+
+<body>
+
+
+<h1 style=>My Classroom</h1>
+
+<div class="box">
+    <% rows.forEach(function(r) { %>
+        <% var width = 150*r.weight/r.height; %>
+        <% var top = 250- r.height; %>
+        <div class = "student" id="<%= r.id%>" onclick="location.href='/student/<%= r.id%>';" style = "height: <%= r.height %>px; width:<%= width %>px;top:<%=top%>px">
+          
+          <p class = "name" style="color:<%=r.hair_color%>"> <%= r.name %> </p> <br>
+          <p class="gpa"><%= r.gpa %></p>
+        </div>
+        <!-- <li><%= r.name %> , <%= r.height %>, <%= r.weight %>, <%= r.hair_color %>, <%= r.gpa %></li> -->
+    <% }); %>
+</div>
+
+<form action="/addstudent.html" method="get">
+  <button type="submit" style="position: relative; top:30px;left:30px;">Add new student</button>
+</form>
+
+</body>
+</html>

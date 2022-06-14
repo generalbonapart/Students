@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/display.css">
+    <title>Update</title>
+</head>
+<body>
+    <div>
+        <p> Update Student Info</p> <br>
+       
+        <form action="/update" method="post" class ="update">
+            <p><label> ID </label> <input type="number" name = "id" value="<%= student[0].id %>" readonly ></p> 
+            <p><label> Name </label> <input type="text" name = "name" value="<%= student[0].name %>" ></p> 
+            <p><label> Weight </label> <input type="number" name = "weight" value="<%= student[0].weight %>" > </p>
+            <p><label> Height </label> <input type="number" name = "height" value="<%= student[0].height %>" > </p>
+            <p><label> Hair Color </label> <input type="text" name = "hair" value="<%= student[0].hair_color %>" > </p>
+            <p><label> GPA </label> <input type="number" name = "gpa" step="0.0001" max="4.33" value="<%= student[0].gpa %>" > </p> 
+            <p><input type="submit" name="sub" value = "Update"></p>
+            <p><button type="submit" formaction="/delete"> Delete </button></p>
+        </form>
+    </div>
+    
+</body>
+</html>
