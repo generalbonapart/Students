@@ -36,6 +36,7 @@ app.get('/class', (req, res)=> {
 
 app.get('/student/:id', (req, res)=> {
   var id = req.params.id;
+  
   var getStudentQuery = `SELECT * FROM student where id=${id};`;
   pool.query(getStudentQuery, (error, result)=>{
     if(error)

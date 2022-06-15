@@ -2,7 +2,7 @@
 <html>
 <head>
   <%- include ("../partials/header.ejs") %>
-  <link rel="stylesheet" href="./stylesheets/display.css">
+  <link rel="stylesheet" href="/stylesheets/display.css">
 </head>
 
 <body>
@@ -10,19 +10,27 @@
 
 <h1 class="header">My Classroom</h1>
 
-<div class="box">
+<% total_width = 0; %>
+
+
+<!-- <div class="box"> -->
     <% rows.forEach(function(r) { %>
+        <% if(total_width==0) { %> <div class="box"> <%}%>
         <% var width = 150*r.weight/r.height; %>
+        <% total_width += width; %>
+        <% if(total_width > 500) {total_width=0;} %>
         <% var top = 250- r.height; %>
         <div class = "student" id="<%= r.id%>" onclick="location.href='/student/<%= r.id%>';" style = "height: <%= r.height %>px; width:<%= width %>px;top:<%=top%>px">
           
           <p class = "name" style="color:<%=r.hair_color%>"> <%= r.name %> </p> <br>
           <p class="gpa"><%= r.gpa %></p>
         </div>
+        <% if(total_width==0) { %> </div> <%}%>
         <!-- <li><%= r.name %> , <%= r.height %>, <%= r.weight %>, <%= r.hair_color %>, <%= r.gpa %></li> -->
     <% }); %>
-</div>
-
+    <% if(total_width!=0) { %> </div> <%}%>
+    
+ 
 <form action="/addstudent.html" method="get">
   <button type="submit" style="position: relative; top:30px;left:30px;">Add new student</button>
 </form>

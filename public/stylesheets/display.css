@@ -1,6 +1,16 @@
 .header{
+    font-size: 30px;
     position: relative;
     left: 30px;
+}
+
+.form
+{   
+    border-spacing: 70px 15px;
+    font-size: 20px;
+    position: relative;
+    left: 20px;
+    top: 10px;
 }
 
 
@@ -11,7 +21,7 @@
     border-radius: 2px;
     margin-left: 10px;
     margin-right: 10px;
-    float:left;
+    float: left;
     cursor: pointer;
     position: relative;
     display:grid;
@@ -39,4 +49,13 @@
     place-self: center;
     top: 15px;
     left: 30px;
+}
+
+form  { display: table;  border-spacing: 60px 20px;   }
+p     { display: table-row;  }
+label { display: table-cell; }
+input { display: table-cell;  width: 100px; height: 30px; border-radius: 3px; border-width: 1px; font-size: 20px; font-family: Georgia; text-align: center;}
+
+button{
+    font-size: 20px;
 }
