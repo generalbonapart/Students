@@ -13,13 +13,13 @@
        
         <form action="/update" method="post" class ="form">
             <p><label> ID </label> <input type="number" name = "id" value="<%= student[0].id %>" readonly ></p> 
-            <p><label> Name </label> <input type="text" name = "name" value="<%= student[0].name %>" ></p> 
-            <p><label> Weight </label> <input type="number" name = "weight" value="<%= student[0].weight %>" > </p>
-            <p><label> Height </label> <input type="number" name = "height" value="<%= student[0].height %>" > </p>
-            <p><label> Hair Color </label> <input type="text" name = "hair" value="<%= student[0].hair_color %>" > </p>
+            <p><label> Name </label> <input type="text" name = "name" value="<%= student[0].name %>" maxlength="10" ></p> 
+            <p><label> Weight </label> <input type="number" name = "weight" min="30" max="300" value="<%= student[0].weight %>" > </p>
+            <p><label> Height </label> <input type="number" name = "height" min="100" max="250" value="<%= student[0].height %>" > </p>
+            <p><label> Hair Color </label> <input type="color" name = "hair" value="<%= student[0].hair_color %>" > </p>
             <p><label> GPA </label> <input type="number" name = "gpa" step="0.0001" max="4.33" value="<%= student[0].gpa %>" > </p> 
             <p><input type="submit" name="sub" value = "Update"></p>
-            <p><button type="submit" formaction="/delete"> Delete </button></p>
+            <p><button type="submit" id="button2" formaction="/delete"> Delete </button></p>
         </form>
     </div>
     

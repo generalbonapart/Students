@@ -10,11 +10,11 @@
 <body>
     <h1 class="header">New student </h1>
     <form class ="form" action="/adduser" method="post">
-        <p><label for="Max"> Name </label> <input type="text" name = "name" value="" placeholder="Name"></p> 
-        <p><label for="A+"> Weight </label> <input type="number" name = "weight" min="0" max="300" value="" placeholder="weight"> </p>
-        <p><label for="A"> Height </label> <input type="number" name = "height" min="0" max="250" value="" placeholder="Height"> </p>
-        <p><label for="A-"> Hair Color </label> <input type="text" name = "hair" value="" placeholder="Hair Colour"> </p>
-        <p><label for="B+"> GPA </label> <input type="number" step="0.0001" max="4.33" name = "gpa" value="" placeholder="GPA"> </p> 
+        <p><label> Name: </label> <input type="text" name = "name" value="" maxlength="10" ></p> 
+        <p><label> Weight: </label> <input type="number" name = "weight" min="30" max="300" value="" > </p>
+        <p><label> Height: </label> <input type="number" name = "height" min="100" max="250" value="" > </p>
+        <p><label> Hair Color: </label> <input type="color" name = "hair" value="#972020" > </p>
+        <p><label> GPA: </label> <input type="number" step="0.0001" max="4.33" name = "gpa" value="" > </p> 
         <p><input type="submit" name="sub" value = "ADD"></p>
     </form>
 </body>

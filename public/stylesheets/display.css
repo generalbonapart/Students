@@ -6,15 +6,22 @@
 
 .form
 {   
-    border-spacing: 70px 15px;
     font-size: 20px;
     position: relative;
-    left: 20px;
     top: 10px;
 }
 
+.total{
+    position: relative;
+    left: 30px;
+    top: 30px;
+    font-size: 20px;
+    float: left;
+
+}
 
 .student{
+    word-break: break-all;
     border-style: solid;
     border-width: 1px;
     background-color: ivory;
@@ -28,7 +35,7 @@
 }
 
 .box{
-    height: 250px;
+    height: 260px;
     width: max-content;
     border-top: 3px;
     position: relative;
@@ -37,7 +44,7 @@
 
 .name{
     font-weight: bold;
-    font-size: 14px;
+    font-size: 20px;
     place-self: center;
     top: 15px;
     left: 30px;
@@ -51,11 +58,43 @@
     left: 30px;
 }
 
-form  { display: table;  border-spacing: 60px 20px;   }
+
+div [name="hair"]{
+    border-radius: 2px 2px 0 0 ;
+    position: relative;
+    bottom: 1px;
+    right: 1px;
+}
+
+
+
+form  { display: table;  border-spacing: 30px 20px;  }
 p     { display: table-row;  }
-label { display: table-cell; }
-input { display: table-cell;  width: 100px; height: 30px; border-radius: 3px; border-width: 1px; font-size: 20px; font-family: Georgia; text-align: center;}
+label { display: inline-block; width: 100px; }
+input { display: table-cell;  width: 150px; height: 30px; border-radius: 3px; border-width: 1px; font-size: 20px; font-family: Georgia; text-align: center;}
+input[name="hair"] { display: table-cell;  margin: .4rem; width: 30px; height: 30px; border-radius: 20px;position: relative; left: 50px;}
 
 button{
     font-size: 20px;
+    font-family: Georgia; 
+    text-align: center;
+    border-radius: 3px;
+    border-width: 1px;
+}
+
+#button1
+{
+    position: relative; 
+    left: 40px;
+    top: 5px;
+}
+
+#button2
+{
+    position: relative; 
+    left: 170px;
+    bottom: 50px;
+    width: 100px; 
+    height: 30px;
+
 }
